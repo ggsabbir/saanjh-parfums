@@ -49,7 +49,9 @@ test-*.js
 debug-*.js
 capture-*.js
 slice-*.js
-check-assets.js
+check-*.js
+check-*.png
+full-website-verified.png
 generate-compare.js
 prepare-assets.js
 take-*.js
