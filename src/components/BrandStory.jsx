@@ -6,21 +6,21 @@ export default function BrandStory() {
       id="our-story"
       className="relative min-h-[500px] sm:min-h-[560px] lg:min-h-[620px] w-full flex items-center overflow-hidden bg-[#FFF0D2] py-16 sm:py-20 lg:py-24"
     >
-      {/* Sunlit Sandstone, Cotton Card & Flowers Background */}
-      <div className="absolute inset-0 z-0">
+      {/* Desktop Full-Bleed Background with seamless fade */}
+      <div className="absolute inset-0 z-0 hidden lg:block">
         <img
           src="/our-story-card.jpg"
           alt="SAANJH PARFUMS cotton card on sunlit sandstone with red blossoms"
-          className="w-full h-full object-cover object-[72%_center] lg:object-[65%_center]"
+          className="w-full h-full object-cover object-[70%_center]"
         />
         {/* Soft gradient ensuring text legibility on left while stone texture and card show on right */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#FFF0D2]/90 via-[#FFF0D2]/45 to-transparent pointer-events-none max-w-2xl" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#FFF0D2] from-45% via-[#FFF0D2]/70 via-60% to-transparent pointer-events-none" />
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full px-5 sm:px-8 md:px-12 grid grid-cols-12 items-center">
-        {/* Left Column Content */}
-        <div className="col-span-8 sm:col-span-7 lg:col-span-6 flex flex-col items-start text-left">
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-5 sm:px-8 md:px-12 grid grid-cols-1 lg:grid-cols-12 items-center gap-8 lg:gap-16">
+        {/* Left Column Editorial Content */}
+        <div className="lg:col-span-6 flex flex-col items-start text-left">
           {/* Eyebrow */}
           <span className="font-sans text-[10.5px] sm:text-[11px] tracking-[0.24em] uppercase text-[#6E1414] font-medium mb-3 block">
             OUR STORY
@@ -50,8 +50,19 @@ export default function BrandStory() {
           <div className="w-8 h-[1px] bg-[#6E1414]/40" />
         </div>
 
-        {/* Right space preserving cotton card and red flowers in the background */}
-        <div className="col-span-4 sm:col-span-5 lg:col-span-6" />
+        {/* Mobile / Tablet Image Visual (neatly stacked below text, avoiding collision with cotton card logo) */}
+        <div className="block lg:hidden w-full">
+          <div className="relative w-full h-[260px] sm:h-[340px] overflow-hidden rounded-[2px] shadow-sm">
+            <img
+              src="/our-story-card.jpg"
+              alt="SAANJH PARFUMS cotton card on sunlit sandstone with red blossoms"
+              className="w-full h-full object-cover object-[95%_center] scale-135 origin-right"
+            />
+          </div>
+        </div>
+
+        {/* Right space preserving cotton card and red flowers in the desktop background */}
+        <div className="hidden lg:block lg:col-span-6" />
       </div>
     </section>
   );

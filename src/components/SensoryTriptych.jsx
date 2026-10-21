@@ -27,20 +27,19 @@ const cards = [
 export default function SensoryTriptych() {
   return (
     <section className="w-full bg-[#220404] py-[1px]">
-      {/* Exact 3-column layout side-by-side across all screens */}
-      <div className="grid grid-cols-3 gap-[1px] md:gap-[2px] bg-[#220404]">
+      {/* Responsive layout: stacked full-width cards on mobile, 3-column split on desktop */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-[2px] bg-[#220404]">
         {cards.map((card) => (
           <article
             key={card.num}
             tabIndex={0}
-            className="group relative h-[260px] sm:h-[360px] md:h-[460px] lg:h-[540px] w-full overflow-hidden bg-[#180303] cursor-pointer focus:outline-none"
+            className="group relative h-[320px] sm:h-[380px] md:h-[460px] lg:h-[540px] w-full overflow-hidden bg-[#180303] cursor-pointer focus:outline-none"
             aria-label={`${card.num} ${card.line1} ${card.line2}`}
           >
             {/* Background Imagery with smooth zoom and brightness on hover */}
             <img
               src={card.img}
               alt={card.alt}
-              loading="lazy"
               className="absolute inset-0 w-full h-full object-cover object-center transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105 group-hover:brightness-105 group-focus:scale-105"
             />
 

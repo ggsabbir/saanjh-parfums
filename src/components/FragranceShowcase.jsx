@@ -18,7 +18,7 @@ export default function FragranceShowcase() {
         <img
           src="/product-showcase-bg.jpg"
           alt="SAANJH AFTER RAIN perfume on weathered driftwood with red blossoms"
-          className="w-full h-full object-cover object-[24%_center]"
+          className="w-full h-full object-cover object-[35%_center] sm:object-[24%_center]"
         />
         {/* Soft cream fade on right for text legibility */}
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#FFF0D2]/75 to-[#FFF0D2] pointer-events-none" />
