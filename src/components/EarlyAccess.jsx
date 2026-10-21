@@ -74,7 +74,7 @@ export default function EarlyAccess() {
   return (
     <section
       id="early-access"
-      className="relative min-h-[600px] w-full flex items-center overflow-hidden bg-[#3A0808]"
+      className="relative min-h-[560px] lg:min-h-[600px] w-full flex items-center overflow-hidden bg-[#3A0808]"
     >
       {/* Dark Crimson Textured Background */}
       <div className="absolute inset-0 z-0">
@@ -84,27 +84,27 @@ export default function EarlyAccess() {
           loading="lazy"
           className="w-full h-full object-cover object-center brightness-95"
         />
-        <div className="absolute inset-0 bg-[#2A0505]/40 backdrop-blur-[1px] pointer-events-none" />
+        <div className="absolute inset-0 bg-[#2A0505]/45 backdrop-blur-[1px] pointer-events-none" />
       </div>
 
       {/* Main Container */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-12 py-20 lg:py-28 grid grid-cols-1 lg:grid-cols-12 items-center gap-12 lg:gap-16">
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-5 sm:px-8 md:px-12 py-16 sm:py-20 lg:py-28 grid grid-cols-1 lg:grid-cols-12 items-center gap-10 sm:gap-12 lg:gap-16">
         {/* Left Column Editorial Content */}
         <div className="lg:col-span-6 text-[#FFF0D2] text-left">
           {/* Eyebrow */}
-          <span className="block font-sans text-[11px] tracking-[0.24em] uppercase text-[#FFF0D2]/80 font-medium mb-4">
+          <span className="block font-sans text-[10.5px] sm:text-[11px] tracking-[0.24em] uppercase text-[#FFF0D2]/80 font-medium mb-3 sm:mb-4">
             EARLY ACCESS
           </span>
 
           {/* H2 Heading */}
-          <h2 className="font-serif text-[#FFF0D2] text-4xl sm:text-5xl lg:text-[54px] leading-[1.1] uppercase tracking-[0.03em] font-light mb-6">
+          <h2 className="font-serif text-[#FFF0D2] text-[32px] sm:text-4xl md:text-5xl lg:text-[54px] leading-[1.1] uppercase tracking-[0.03em] font-light mb-5 sm:mb-6">
             BE THERE
             <br />
             BEFORE THE REVEAL.
           </h2>
 
           {/* Body Text */}
-          <p className="font-sans text-[#FFF0D2]/90 text-[15px] leading-[1.75] max-w-md mb-6 font-light">
+          <p className="font-sans text-[#FFF0D2]/90 text-sm sm:text-[15px] leading-[1.75] max-w-md mb-5 sm:mb-6 font-light">
             Be among the first to discover AFTER RAIN.
             <br />
             Join the SAANJH early-access list for launch updates and first access when we&apos;re
@@ -112,10 +112,10 @@ export default function EarlyAccess() {
           </p>
 
           {/* Divider Line */}
-          <div className="w-8 h-[1px] bg-[#FFF0D2]/40 mb-6" />
+          <div className="w-8 h-[1px] bg-[#FFF0D2]/40 mb-5 sm:mb-6" />
 
           {/* Italic Footnote */}
-          <p className="font-serif italic text-lg sm:text-xl text-[#FFF0D2]/85 font-normal">
+          <p className="font-serif italic text-base sm:text-lg lg:text-xl text-[#FFF0D2]/85 font-normal">
             No payment. Just first access to what&apos;s coming.
           </p>
         </div>
@@ -124,23 +124,23 @@ export default function EarlyAccess() {
         <div className="lg:col-span-6 max-w-lg w-full mx-auto lg:mx-0">
           {status === 'success' ? (
             /* Luxury Confirmation State */
-            <div className="bg-[#240303]/85 border border-[#FFF0D2]/25 p-8 sm:p-10 rounded-[2px] text-center text-[#FFF0D2] shadow-2xl backdrop-blur-md transition-all duration-700">
-              <div className="w-12 h-12 mx-auto mb-5 rounded-full border border-[#FFF0D2]/40 flex items-center justify-center text-[#FFF0D2]">
-                <Check className="w-6 h-6 stroke-[1.5]" />
+            <div className="bg-[#240303]/85 border border-[#FFF0D2]/25 p-6 sm:p-8 md:p-10 rounded-[2px] text-center text-[#FFF0D2] shadow-2xl backdrop-blur-md transition-all duration-700">
+              <div className="w-11 h-11 sm:w-12 sm:h-12 mx-auto mb-4 sm:mb-5 rounded-full border border-[#FFF0D2]/40 flex items-center justify-center text-[#FFF0D2]">
+                <Check className="w-5 h-5 sm:w-6 sm:h-6 stroke-[1.5]" />
               </div>
-              <h3 className="font-serif text-3xl sm:text-4xl uppercase tracking-[0.05em] font-normal mb-3 text-[#FFF0D2]">
+              <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl uppercase tracking-[0.05em] font-normal mb-2 sm:mb-3 text-[#FFF0D2]">
                 You&apos;re on the list.
               </h3>
-              <p className="font-serif italic text-xl text-[#FFF0D2]/90 mb-6">
+              <p className="font-serif italic text-lg sm:text-xl text-[#FFF0D2]/90 mb-5 sm:mb-6">
                 We will whisper when AFTER RAIN is ready.
               </p>
-              <p className="font-sans text-xs tracking-wider text-[#FFF0D2]/75 mb-8 max-w-xs mx-auto">
+              <p className="font-sans text-xs tracking-wider text-[#FFF0D2]/75 mb-7 sm:mb-8 max-w-xs mx-auto">
                 A confirmation has been recorded for{' '}
                 <span className="text-[#FFF0D2] font-medium">{submittedEmail}</span>.
               </p>
               <button
                 onClick={handleReset}
-                className="font-sans text-[10.5px] tracking-[0.22em] uppercase text-[#FFF0D2]/80 hover:text-[#FFF0D2] border-b border-[#FFF0D2]/40 hover:border-[#FFF0D2] pb-1 transition-colors cursor-pointer"
+                className="font-sans text-[10px] sm:text-[10.5px] tracking-[0.22em] uppercase text-[#FFF0D2]/80 hover:text-[#FFF0D2] border-b border-[#FFF0D2]/40 hover:border-[#FFF0D2] pb-1 transition-colors cursor-pointer"
               >
                 Join with another email
               </button>
@@ -150,7 +150,7 @@ export default function EarlyAccess() {
             <form
               onSubmit={handleSubmit}
               noValidate
-              className="bg-[#240303]/70 sm:bg-transparent sm:border-0 border border-[#FFF0D2]/15 p-6 sm:p-0 rounded-[2px] space-y-4 text-left"
+              className="bg-[#240303]/70 sm:bg-transparent sm:border-0 border border-[#FFF0D2]/15 p-5 sm:p-0 rounded-[2px] space-y-4 text-left"
             >
               {/* Name Field */}
               <div>
@@ -236,7 +236,7 @@ export default function EarlyAccess() {
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="w-full btn-luxury-cream py-4 text-[#4A0E0E] font-medium text-[11px] tracking-[0.24em] uppercase transition-all duration-300 rounded-[2px] flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70"
+                className="w-full btn-luxury-cream py-3.5 sm:py-4 text-[#4A0E0E] font-medium text-[11px] tracking-[0.24em] uppercase transition-all duration-300 rounded-[2px] flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70"
               >
                 {status === 'loading' ? (
                   <>

@@ -72,7 +72,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-[#F2E9DC] text-[#4A3A34] overflow-x-hidden selection:bg-[#6E1414] selection:text-[#FFF0D2]">
+    <div className="relative min-h-screen bg-[#FFF0D2] text-[#4A3A34] overflow-x-hidden selection:bg-[#6E1414] selection:text-[#FFF0D2]">
       {/* Editorial Navigation Bar */}
       <Navbar
         onOpenMobileMenu={() => setIsMobileMenuOpen(true)}

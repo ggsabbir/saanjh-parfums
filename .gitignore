@@ -42,5 +42,14 @@ live-*.png
 ref-*.png
 thumb-*.png
 user-*.png
+vp-*.png
 compare.html
 preview-assets.html
+test-*.js
+debug-*.js
+capture-*.js
+slice-*.js
+check-assets.js
+generate-compare.js
+prepare-assets.js
+take-*.js

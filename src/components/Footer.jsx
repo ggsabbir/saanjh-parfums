@@ -1,6 +1,6 @@
 import React from 'react';
 
-function InstagramIcon({ className = "w-4 h-4" }) {
+function InstagramIcon({ className = 'w-4 h-4' }) {
   return (
     <svg
       className={className}
@@ -27,9 +27,9 @@ export default function Footer() {
   };
 
   return (
-    <footer className="w-full bg-[#EAE0D0] text-[#5A3E36] py-14 px-6 md:px-12 border-t border-[#6E1414]/10">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 items-center gap-10 text-center md:text-left">
-        {/* Left Column: Brand & Tagline */}
+    <footer className="w-full bg-[#FFF0D2] text-[#5A3E36] py-10 sm:py-14 px-5 sm:px-8 md:px-12 border-t border-[#6E1414]/10">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 items-center gap-8 md:gap-10 text-center md:text-left">
+        {/* Left Column: Real Brand Woodmark & Tagline */}
         <div className="flex flex-col items-center md:items-start">
           <a
             href="#hero"
@@ -37,41 +37,40 @@ export default function Footer() {
               e.preventDefault();
               scrollTo('hero');
             }}
-            className="flex flex-col items-center md:items-start group"
+            className="flex items-center group cursor-pointer"
           >
-            <span className="font-serif text-[22px] font-medium tracking-[0.22em] text-[#6E1414] leading-none">
-              SAANJH
-            </span>
-            <span className="font-sans text-[7.5px] tracking-[0.45em] text-[#6E1414]/85 uppercase mt-1 pl-[0.45em]">
-              PARFUMS
-            </span>
+            <img
+              src="/woodmark-clean.png"
+              alt="SAANJH PARFUMS"
+              className="h-6 sm:h-7 w-auto object-contain hover:opacity-85 transition-opacity"
+            />
           </a>
-          <p className="font-serif italic text-2xl text-[#6E1414]/85 mt-3 font-normal">
+          <p className="font-serif italic text-xl sm:text-2xl text-[#6E1414]/85 mt-2.5 sm:mt-3 font-normal">
             Some feelings stay.
           </p>
         </div>
 
         {/* Center Column: Navigation & Socials */}
-        <div className="flex flex-col items-center gap-5">
+        <div className="flex flex-col items-center gap-4 sm:gap-5">
           {/* Navigation Links */}
-          <nav className="flex flex-wrap items-center justify-center gap-6 sm:gap-7 text-[10px] tracking-[0.22em] uppercase text-[#5A3E36]">
+          <nav className="flex flex-wrap items-center justify-center gap-5 sm:gap-7 text-[10px] tracking-[0.22em] uppercase text-[#5A3E36]">
             <button
               onClick={() => scrollTo('the-fragrance')}
-              className="hover:text-[#6E1414] transition-colors"
+              className="hover:text-[#6E1414] transition-colors cursor-pointer"
             >
               THE FRAGRANCE
             </button>
             <span className="opacity-30">·</span>
             <button
               onClick={() => scrollTo('our-story')}
-              className="hover:text-[#6E1414] transition-colors"
+              className="hover:text-[#6E1414] transition-colors cursor-pointer"
             >
               OUR STORY
             </button>
             <span className="opacity-30">·</span>
             <button
               onClick={() => scrollTo('early-access')}
-              className="hover:text-[#6E1414] transition-colors"
+              className="hover:text-[#6E1414] transition-colors cursor-pointer"
             >
               EARLY ACCESS
             </button>
@@ -121,15 +120,23 @@ export default function Footer() {
           {/* Legal Links */}
           <div className="flex gap-4 text-[11px] text-[#7A685D] tracking-wide pt-1">
             <button
-              onClick={() => alert('SAANJH PARFUMS Privacy Policy: We respect your discretion. Your information is never sold or shared.')}
-              className="hover:text-[#6E1414] transition-colors underline-offset-4 hover:underline"
+              onClick={() =>
+                alert(
+                  'SAANJH PARFUMS Privacy Policy: We respect your discretion. Your information is never sold or shared.'
+                )
+              }
+              className="hover:text-[#6E1414] transition-colors underline-offset-4 hover:underline cursor-pointer"
             >
               Privacy Policy
             </button>
             <span className="opacity-40">|</span>
             <button
-              onClick={() => alert('SAANJH PARFUMS Terms of Use: Debut release "AFTER RAIN" is in limited development.')}
-              className="hover:text-[#6E1414] transition-colors underline-offset-4 hover:underline"
+              onClick={() =>
+                alert(
+                  'SAANJH PARFUMS Terms of Use: Debut release "AFTER RAIN" is in limited development.'
+                )
+              }
+              className="hover:text-[#6E1414] transition-colors underline-offset-4 hover:underline cursor-pointer"
             >
               Terms of Use
             </button>
