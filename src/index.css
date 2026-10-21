@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-cream: #F2E9DC;
+  --color-bg-cream-alt: #EAE0D0;
+  --color-bg-taupe-badge: #E4D5C3;
+  --color-crimson-primary: #6E1414;
+  --color-crimson-dark: #3A0808;
+  --color-crimson-deepest: #220404;
+  --color-text-dark: #4A3A34;
+  --color-text-muted: #7A685D;
+  --color-text-light: #FFF0D2;
+  --color-btn-cream: #FFF0D2;
+  
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Montserrat", system-ui, -apple-system, sans-serif;
+}
+
+:root {
+  --bg-cream: #F2E9DC;
+  --bg-cream-alt: #EAE0D0;
+  --bg-taupe-badge: #E4D5C3;
+  --crimson-primary: #6E1414;
+  --crimson-dark: #3A0808;
+  --crimson-deepest: #220404;
+  --text-dark: #4A3A34;
+  --text-muted: #7A685D;
+  --text-light: #FFF0D2;
+  --btn-cream: #FFF0D2;
+  --border-subtle-light: rgba(110, 20, 20, 0.22);
+  --border-subtle-dark: rgba(255, 240, 210, 0.22);
+}
+
+/* Custom Typography & Utility Defaults */
+html {
+  font-family: var(--font-sans);
+  background-color: var(--bg-cream);
+  color: var(--text-dark);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* Form Validation via Modern Web Guidance :user-invalid and :user-valid */
+.saanjh-input:user-invalid {
+  border-color: #E05D5D !important;
+  background-color: rgba(60, 10, 10, 0.75) !important;
+}
+
+.saanjh-input:user-valid:not(:placeholder-shown) {
+  border-color: rgba(255, 240, 210, 0.7) !important;
+}
+
+/* Field error message revealed only after user interaction */
+.field-error-msg {
+  display: none;
+  font-size: 11px;
+  color: #E8A8A8;
+  margin-top: 4px;
+  letter-spacing: 0.05em;
+}
+
+.saanjh-input:user-invalid + .field-error-msg {
+  display: block;
+}
+
+/* Subtle luxury scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F2E9DC;
+}
+::-webkit-scrollbar-thumb {
+  background: #6E1414;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4A0E0E;
+}
+
+/* Keyframes for subtle ambient animations */
+@keyframes delicateFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(19deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(18.5deg);
+  }
+}
+
+.animate-delicate-float {
+  animation: delicateFloat 6s ease-in-out infinite;
+}
+
+/* Luxury button hover state */
+.btn-luxury-primary {
+  background-color: #6E1414;
+  color: #FFF0D2;
+  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 4px 18px rgba(110, 20, 20, 0.2);
+}
+.btn-luxury-primary:hover {
+  background-color: #520D0D;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(110, 20, 20, 0.32);
+}
+
+.btn-luxury-cream {
+  background-color: #FFF0D2;
+  color: #4A0E0E;
+  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+}
+.btn-luxury-cream:hover {
+  background-color: #FFF7E6;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.38);
+}
