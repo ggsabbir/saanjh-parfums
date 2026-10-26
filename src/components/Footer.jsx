@@ -18,14 +18,7 @@ function InstagramIcon({ className = 'w-4 h-4' }) {
   );
 }
 
-export default function Footer() {
-  const scrollTo = (id) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
+export default function Footer({ onHome, onNavigate, onOpenProduct, onOpenPolicy }) {
   return (
     <footer className="w-full bg-[#FFF0D2] text-[#5A3E36] py-10 sm:py-14 px-5 sm:px-8 md:px-12 border-t border-[#6E1414]/10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 items-center gap-8 md:gap-10 text-center md:text-left">
@@ -35,7 +28,7 @@ export default function Footer() {
             href="#hero"
             onClick={(e) => {
               e.preventDefault();
-              scrollTo('hero');
+              onHome();
             }}
             className="flex items-center group cursor-pointer"
           >
@@ -45,9 +38,6 @@ export default function Footer() {
               className="h-6 sm:h-7 w-auto object-contain hover:opacity-85 transition-opacity"
             />
           </a>
-          <p className="font-serif italic text-xl sm:text-2xl text-[#6E1414]/85 mt-2.5 sm:mt-3 font-normal">
-            Some feelings stay.
-          </p>
         </div>
 
         {/* Center Column: Navigation & Socials */}
@@ -55,24 +45,14 @@ export default function Footer() {
           {/* Navigation Links */}
           <nav className="flex flex-wrap items-center justify-center gap-5 sm:gap-7 text-[10px] tracking-[0.22em] uppercase text-[#5A3E36]">
             <button
-              onClick={() => scrollTo('the-fragrance')}
-              className="hover:text-[#6E1414] transition-colors cursor-pointer"
-            >
-              THE FRAGRANCE
-            </button>
-            <span className="opacity-30">·</span>
-            <button
-              onClick={() => scrollTo('our-story')}
+              onClick={() => onNavigate('our-story')}
               className="hover:text-[#6E1414] transition-colors cursor-pointer"
             >
               OUR STORY
             </button>
             <span className="opacity-30">·</span>
-            <button
-              onClick={() => scrollTo('early-access')}
-              className="hover:text-[#6E1414] transition-colors cursor-pointer"
-            >
-              EARLY ACCESS
+            <button onClick={onOpenProduct} className="hover:text-[#6E1414] transition-colors cursor-pointer">
+              SHOP AFTER RAIN
             </button>
           </nav>
 
@@ -118,28 +98,11 @@ export default function Footer() {
           </a>
 
           {/* Legal Links */}
-          <div className="flex gap-4 text-[11px] text-[#7A685D] tracking-wide pt-1">
-            <button
-              onClick={() =>
-                alert(
-                  'SAANJH PARFUMS Privacy Policy: We respect your discretion. Your information is never sold or shared.'
-                )
-              }
-              className="hover:text-[#6E1414] transition-colors underline-offset-4 hover:underline cursor-pointer"
-            >
-              Privacy Policy
-            </button>
-            <span className="opacity-40">|</span>
-            <button
-              onClick={() =>
-                alert(
-                  'SAANJH PARFUMS Terms of Use: Debut release "AFTER RAIN" is in limited development.'
-                )
-              }
-              className="hover:text-[#6E1414] transition-colors underline-offset-4 hover:underline cursor-pointer"
-            >
-              Terms of Use
-            </button>
+          <div className="flex flex-wrap justify-center gap-3 text-[11px] text-[#7A685D] tracking-wide pt-1 md:justify-end">
+            <button onClick={() => onOpenPolicy('shipping')} className="hover:text-[#6E1414] transition-colors underline-offset-4 hover:underline cursor-pointer">Shipping</button>
+            <button onClick={() => onOpenPolicy('returns')} className="hover:text-[#6E1414] transition-colors underline-offset-4 hover:underline cursor-pointer">Returns</button>
+            <button onClick={() => onOpenPolicy('privacy')} className="hover:text-[#6E1414] transition-colors underline-offset-4 hover:underline cursor-pointer">Privacy</button>
+            <button onClick={() => onOpenPolicy('terms')} className="hover:text-[#6E1414] transition-colors underline-offset-4 hover:underline cursor-pointer">Terms</button>
           </div>
 
           {/* Copyright */}

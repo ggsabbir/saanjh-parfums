@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-export default function Navbar({ onOpenMobileMenu, activeSection }) {
+export default function Navbar({ onOpenMobileMenu, activeSection, isProductPage, onOpenProduct, onHome, onNavigate }) {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -10,13 +10,6 @@ export default function Navbar({ onOpenMobileMenu, activeSection }) {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const scrollTo = (id) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <header
@@ -32,7 +25,7 @@ export default function Navbar({ onOpenMobileMenu, activeSection }) {
           href="#hero"
           onClick={(e) => {
             e.preventDefault();
-            scrollTo('hero');
+            onHome();
           }}
           className="flex items-center select-none cursor-pointer"
           aria-label="SAANJH PARFUMS Home"
@@ -52,7 +45,7 @@ export default function Navbar({ onOpenMobileMenu, activeSection }) {
           {/* Navigation Items */}
           <nav className="hidden sm:flex items-center gap-5 md:gap-7 lg:gap-10">
             <button
-              onClick={() => scrollTo('the-fragrance')}
+              onClick={() => onNavigate('the-fragrance')}
               className={`relative font-sans text-[10px] md:text-[11px] tracking-[0.22em] uppercase transition-colors duration-300 py-1 cursor-pointer whitespace-nowrap ${
                 activeSection === 'the-fragrance'
                   ? 'text-[#6E1414] font-medium'
@@ -68,7 +61,7 @@ export default function Navbar({ onOpenMobileMenu, activeSection }) {
             </button>
 
             <button
-              onClick={() => scrollTo('our-story')}
+              onClick={() => onNavigate('our-story')}
               className={`relative font-sans text-[10px] md:text-[11px] tracking-[0.22em] uppercase transition-colors duration-300 py-1 cursor-pointer whitespace-nowrap ${
                 activeSection === 'our-story'
                   ? 'text-[#6E1414] font-medium'
@@ -84,19 +77,11 @@ export default function Navbar({ onOpenMobileMenu, activeSection }) {
             </button>
 
             <button
-              onClick={() => scrollTo('early-access')}
-              className={`relative font-sans text-[10px] md:text-[11px] tracking-[0.22em] uppercase transition-colors duration-300 py-1 cursor-pointer whitespace-nowrap ${
-                activeSection === 'early-access'
-                  ? 'text-[#6E1414] font-medium'
-                  : 'text-[#4A3A34]/80 hover:text-[#6E1414]'
-              }`}
+              onClick={onOpenProduct}
+              className={`relative font-sans text-[10px] md:text-[11px] tracking-[0.22em] uppercase transition-colors duration-300 py-1 cursor-pointer whitespace-nowrap ${isProductPage ? 'text-[#6E1414] font-medium' : 'text-[#4A3A34]/80 hover:text-[#6E1414]'}`}
             >
-              EARLY ACCESS
-              <span
-                className={`absolute bottom-0 left-0 w-full h-[1px] bg-[#6E1414] transition-transform duration-300 origin-left ${
-                  activeSection === 'early-access' ? 'scale-x-100' : 'scale-x-0 hover:scale-x-100'
-                }`}
-              />
+              SHOP AFTER RAIN
+              <span className={`absolute bottom-0 left-0 w-full h-[1px] bg-[#6E1414] transition-transform duration-300 origin-left ${isProductPage ? 'scale-x-100' : 'scale-x-0 hover:scale-x-100'}`} />
             </button>
           </nav>
         </div>

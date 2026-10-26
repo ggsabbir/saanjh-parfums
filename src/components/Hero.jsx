@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-export default function Hero({ activeStep = '01' }) {
+export default function Hero({ activeStep = '01', onShop }) {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const heroRef = useRef(null);
 
@@ -63,14 +63,16 @@ export default function Hero({ activeStep = '01' }) {
       {/* Main Grid: Left Column Text & Right Column Tilted Bottle (Side-by-Side on all screen sizes) */}
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 md:px-12 w-full grid grid-cols-12 items-center">
         {/* Left Column Content */}
-        <div className="col-span-7 sm:col-span-6 lg:col-span-6 text-left py-6 sm:py-0">
+        <div className="editorial-reveal col-span-7 sm:col-span-6 lg:col-span-6 text-left py-6 sm:py-0">
+          <span className="mb-4 block font-sans text-[10px] tracking-[0.24em] uppercase text-[#6E1414] sm:mb-5 sm:text-[11px]">
+            SAANJH PARFUMS
+          </span>
+
           {/* Main H1 Editorial Heading */}
           <h1 className="font-serif text-[#6E1414] text-[32px] sm:text-5xl md:text-6xl lg:text-[68px] leading-[1.06] font-normal tracking-[-0.01em]">
-            Some things are
+            Some moments never
             <br />
-            better felt
-            <br />
-            than revealed.
+            really leave us.
           </h1>
 
           {/* Subtitle */}
@@ -82,19 +84,19 @@ export default function Hero({ activeStep = '01' }) {
           <div className="flex flex-wrap items-center gap-4 sm:gap-7 pt-1">
             {/* Primary Button */}
             <button
-              onClick={() => scrollTo('early-access')}
+              onClick={onShop}
               className="btn-luxury-primary px-5 sm:px-7 py-3 sm:py-3.5 text-[10px] sm:text-[11px] tracking-[0.22em] uppercase font-medium rounded-[2px] cursor-pointer"
             >
-              GET EARLY ACCESS
+              DISCOVER AFTER RAIN
             </button>
 
             {/* Secondary Link with animated downward arrow */}
             <button
-              onClick={() => scrollTo('the-fragrance')}
+              onClick={() => scrollTo('our-story')}
               className="group flex items-center gap-1.5 sm:gap-2 font-sans text-[10px] sm:text-[11px] tracking-[0.2em] text-[#5A3E36] hover:text-[#6E1414] uppercase py-1 transition-colors duration-300 cursor-pointer"
             >
               <span className="border-b border-[#5A3E36]/50 group-hover:border-[#6E1414] transition-colors pb-[1px]">
-                DISCOVER AFTER RAIN
+                OUR STORY
               </span>
               <span className="text-[12px] sm:text-[13px] transition-transform duration-300 group-hover:translate-y-1">
                 ↓
@@ -110,7 +112,7 @@ export default function Hero({ activeStep = '01' }) {
             transform: `translate(${mousePos.x * 0.3}px, ${mousePos.y * 0.3}px)`,
           }}
         >
-          <div className="relative w-full max-w-[220px] sm:max-w-[320px] md:max-w-[380px] lg:max-w-[440px] max-h-[75vh]">
+          <div className="relative w-full max-w-[260px] sm:max-w-[380px] md:max-w-[450px] lg:max-w-[520px] max-h-[78vh]">
             {/* Multi-layered soft drop shadow on sandstone */}
             <div
               className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-[85%] h-14 bg-[#2A0505]/45 rounded-full blur-xl pointer-events-none"
@@ -119,7 +121,7 @@ export default function Hero({ activeStep = '01' }) {
             <img
               src="/perfume-bottle.png"
               alt="SAANJH AFTER RAIN Eau de Parfum bottle tilted on wet sandstone"
-              className="w-full h-auto max-h-[65vh] sm:max-h-[75vh] object-contain transition-transform duration-700 ease-out drop-shadow-[0_24px_38px_rgba(40,10,5,0.45)] drop-shadow-[0_8px_16px_rgba(70,15,10,0.32)] animate-delicate-float"
+              className="w-full h-auto max-h-[72vh] sm:max-h-[80vh] object-contain transition-transform duration-700 ease-out drop-shadow-[0_24px_38px_rgba(40,10,5,0.45)] drop-shadow-[0_8px_16px_rgba(70,15,10,0.32)] animate-delicate-float"
               style={{
                 transform: `rotate(${19 + mousePos.x * 0.08}deg)`,
               }}

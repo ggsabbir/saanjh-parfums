@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { X } from 'lucide-react';
 
-export default function MobileMenu({ isOpen, onClose }) {
+export default function MobileMenu({ isOpen, onClose, onOpenProduct, onHome, onNavigate }) {
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape' && isOpen) {
@@ -20,14 +20,19 @@ export default function MobileMenu({ isOpen, onClose }) {
     };
   }, [isOpen, onClose]);
 
-  const scrollTo = (id) => {
+  const navigateTo = (id) => {
     onClose();
-    setTimeout(() => {
-      const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 300);
+    onNavigate(id);
+  };
+
+  const openProduct = () => {
+    onClose();
+    onOpenProduct();
+  };
+
+  const goHome = () => {
+    onClose();
+    onHome();
   };
 
   if (!isOpen) return null;
@@ -67,28 +72,28 @@ export default function MobileMenu({ isOpen, onClose }) {
         {/* Navigation Links */}
         <nav className="flex flex-col space-y-6 sm:space-y-7 py-8 sm:py-10">
           <button
-            onClick={() => scrollTo('hero')}
+            onClick={goHome}
             className="text-left font-serif text-2xl sm:text-3xl md:text-4xl text-[#6E1414] hover:opacity-75 transition-opacity cursor-pointer"
           >
             Home
           </button>
           <button
-            onClick={() => scrollTo('the-fragrance')}
+            onClick={() => navigateTo('the-fragrance')}
             className="text-left font-serif text-2xl sm:text-3xl md:text-4xl text-[#6E1414] hover:opacity-75 transition-opacity cursor-pointer"
           >
-            The Fragrance
+            The Feeling
           </button>
           <button
-            onClick={() => scrollTo('our-story')}
+            onClick={() => navigateTo('our-story')}
             className="text-left font-serif text-2xl sm:text-3xl md:text-4xl text-[#6E1414] hover:opacity-75 transition-opacity cursor-pointer"
           >
             Our Story
           </button>
           <button
-            onClick={() => scrollTo('early-access')}
+            onClick={openProduct}
             className="text-left font-serif text-2xl sm:text-3xl md:text-4xl text-[#6E1414] hover:opacity-75 transition-opacity cursor-pointer"
           >
-            Early Access
+            Shop After Rain
           </button>
         </nav>
 

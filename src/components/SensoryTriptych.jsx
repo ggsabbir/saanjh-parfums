@@ -40,7 +40,7 @@ export default function SensoryTriptych() {
             <img
               src={card.img}
               alt={card.alt}
-              className="absolute inset-0 w-full h-full object-cover object-center transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105 group-hover:brightness-105 group-focus:scale-105"
+              className="absolute inset-0 w-full h-full object-cover object-center image-lift transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105 group-hover:brightness-105 group-focus:scale-105"
             />
 
             {/* Dark gradient overlay for text clarity */}
