@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, LockKeyhole, Menu } from 'lucide-react';
-import { AFTER_RAIN, formatPrice } from '../data/product.js';
+import { AFTER_RAIN, AFTER_RAIN_BOTTLE_IMAGE, formatPrice } from '../data/product.js';
 import RazorpayPaymentButton from './RazorpayPaymentButton.jsx';
 
 const gallery = [
-  { src: '/perfume-bottle.png', alt: 'AFTER RAIN fragrance bottle, front view' },
+  { src: AFTER_RAIN_BOTTLE_IMAGE, alt: 'AFTER RAIN fragrance bottle, front view' },
   { src: '/product-showcase-bg.jpg', alt: 'AFTER RAIN fragrance in its atmospheric setting' },
 ];
 

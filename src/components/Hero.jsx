@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { AFTER_RAIN_BOTTLE_IMAGE } from '../data/product.js';
 
 export default function Hero({ activeStep = '01', onShop }) {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -119,7 +120,7 @@ export default function Hero({ activeStep = '01', onShop }) {
               style={{ transform: 'rotate(19deg) scale(0.95)' }}
             />
             <img
-              src="/perfume-bottle.png"
+              src={AFTER_RAIN_BOTTLE_IMAGE}
               alt="SAANJH AFTER RAIN Eau de Parfum bottle tilted on wet sandstone"
               className="w-full h-auto max-h-[72vh] sm:max-h-[80vh] object-contain transition-transform duration-700 ease-out drop-shadow-[0_24px_38px_rgba(40,10,5,0.45)] drop-shadow-[0_8px_16px_rgba(70,15,10,0.32)] animate-delicate-float"
               style={{

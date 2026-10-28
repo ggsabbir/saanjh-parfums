@@ -1,3 +1,6 @@
+export const AFTER_RAIN_BOTTLE_IMAGE =
+  'https://res.cloudinary.com/lt9uyfk1/image/upload/f_auto,q_auto/perfume-bottle';
+
 export const AFTER_RAIN = {
   slug: 'after-rain',
   name: 'AFTER RAIN',
@@ -12,7 +15,7 @@ export const AFTER_RAIN = {
   variants: [
     { id: 'after-rain-50', size: '50 ml', price: 1199 },
   ],
-  image: '/perfume-bottle.png',
+  image: AFTER_RAIN_BOTTLE_IMAGE,
 };
 
 export const formatPrice = (amount) => `₹${amount.toLocaleString('en-IN')}`;
