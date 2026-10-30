@@ -24,7 +24,7 @@ export default function CartDrawer({ cart, isOpen, onClose }) {
             </div>
           ))}
         </div>
-        <div className="border-t border-[#6E1414]/15 pt-5"><div className="mb-2 flex justify-between text-sm text-[#4A3A34]"><span>Subtotal</span><span>{formatPrice(cart.subtotal)}</span></div><p className="mb-5 text-[11px] leading-relaxed text-[#7A685D]">Your details and payment are collected securely by Razorpay.</p><div className={`flex min-h-12 items-center justify-center border border-[#6E1414] px-4 ${!cart.items.length ? 'pointer-events-none opacity-40' : ''}`}><RazorpayPaymentButton /></div></div>
+        <div className="border-t border-[#6E1414]/15 pt-5"><div className="mb-2 flex justify-between text-sm text-[#4A3A34]"><span>Subtotal</span><span>{formatPrice(cart.subtotal)}</span></div><p className="mb-2 text-[10px] uppercase tracking-[0.14em] text-[#6E1414]/75">Launch offer · ₹999</p><p className="mb-5 text-[11px] leading-relaxed text-[#7A685D]">Your details and payment are collected securely by Razorpay.</p><div className={`flex min-h-12 items-center justify-center border border-[#6E1414] px-4 ${!cart.items.length ? 'pointer-events-none opacity-40' : ''}`}><RazorpayPaymentButton /></div></div>
       </aside>
     </div>
   );

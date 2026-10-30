@@ -26,7 +26,7 @@ const cards = [
 
 export default function SensoryTriptych() {
   return (
-    <section className="w-full bg-[#220404] py-[1px]">
+    <section className="scroll-scene w-full bg-[#220404] py-[1px]">
       {/* Responsive layout: stacked full-width cards on mobile, 3-column split on desktop */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-[2px] bg-[#220404]">
         {cards.map((card) => (
@@ -40,7 +40,7 @@ export default function SensoryTriptych() {
             <img
               src={card.img}
               alt={card.alt}
-              className="absolute inset-0 w-full h-full object-cover object-center image-lift transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105 group-hover:brightness-105 group-focus:scale-105"
+              className="scroll-scene-image absolute inset-0 w-full h-full object-cover object-center image-lift transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105 group-hover:brightness-105 group-focus:scale-105"
             />
 
             {/* Dark gradient overlay for text clarity */}
@@ -57,7 +57,7 @@ export default function SensoryTriptych() {
               <div className="w-4 sm:w-6 h-[1px] bg-[#FFF0D2]/50 mb-2 sm:mb-3.5 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:w-8 sm:group-hover:w-12 group-hover:bg-[#FFF0D2]" />
 
               {/* Title in Cormorant Garamond */}
-              <h3 className="font-serif text-xs sm:text-base md:text-2xl lg:text-[28px] leading-[1.15] sm:leading-[1.2] tracking-[0.05em] uppercase font-normal text-[#FFF0D2]">
+              <h3 className="font-serif text-base sm:text-base md:text-2xl lg:text-[28px] leading-[1.15] sm:leading-[1.2] tracking-[0.05em] uppercase font-normal text-[#FFF0D2]">
                 {card.line1}
                 <br />
                 {card.line2}

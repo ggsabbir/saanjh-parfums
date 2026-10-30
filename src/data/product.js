@@ -13,7 +13,7 @@ export const AFTER_RAIN = {
     base: ['Leather', 'Musk'],
   },
   variants: [
-    { id: 'after-rain-50', size: '50 ml', price: 1199 },
+    { id: 'after-rain-50', size: '50 ml', price: 999, compareAtPrice: 1399 },
   ],
   image: AFTER_RAIN_BOTTLE_IMAGE,
 };

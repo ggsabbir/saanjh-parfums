@@ -6,7 +6,7 @@ import Navbar from './components/Navbar.jsx';
 import Hero from './components/Hero.jsx';
 import Interlude from './components/Interlude.jsx';
 import FragranceShowcase from './components/FragranceShowcase.jsx';
-import SensoryTriptych from './components/SensoryTriptych.jsx';
+import FragranceStory from './components/FragranceStory.jsx';
 import BrandStory from './components/BrandStory.jsx';
 import Footer from './components/Footer.jsx';
 import MobileMenu from './components/MobileMenu.jsx';
@@ -150,10 +150,10 @@ export default function App() {
         <Interlude />
 
         {/* Section 3: The First Fragrance Showcase */}
-        <FragranceShowcase />
+        <FragranceShowcase onShop={openProduct} />
 
-        {/* Section 4: Sensory Triptych */}
-        <SensoryTriptych />
+        {/* Section 4: Fragrance Story */}
+        <FragranceStory />
 
         {/* Section 5: Brand Story */}
         <BrandStory />

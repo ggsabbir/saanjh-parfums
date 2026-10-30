@@ -4,7 +4,7 @@ export default function Interlude() {
   return (
     <section
       id="emotional-core"
-      className="relative min-h-[260px] sm:min-h-[300px] md:min-h-[360px] w-full flex items-center overflow-hidden bg-[#2D0606]"
+      className="scroll-scene relative min-h-[260px] sm:min-h-[300px] md:min-h-[360px] w-full flex items-center overflow-hidden bg-[#2D0606]"
     >
       {/* Dark Crimson Water Ripples Background with Floating Petal */}
       <div className="absolute inset-0 z-0">
@@ -12,10 +12,11 @@ export default function Interlude() {
           src="/water-ripples-bg.jpg"
           alt="Dark crimson water ripples with drifting leaf"
           loading="lazy"
-          className="w-full h-full object-cover object-[15%_center] brightness-95"
+          className="scroll-scene-image w-full h-full object-cover object-[15%_center] brightness-95"
         />
         {/* Deep oxblood subtle vignette */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#220404]/60 via-transparent to-[#220404]/60 pointer-events-none" />
+        <div className="scroll-scene-wash absolute inset-0 pointer-events-none" />
       </div>
 
       {/* Content Container */}

@@ -4,11 +4,11 @@ export default function BrandStory() {
   return (
     <section
       id="our-story"
-      className="relative min-h-[500px] sm:min-h-[560px] lg:min-h-[620px] w-full flex items-center overflow-hidden bg-[#FFF0D2] py-16 sm:py-20 lg:py-24"
+      className="scroll-scene relative min-h-[500px] sm:min-h-[560px] lg:min-h-[620px] w-full flex items-center overflow-hidden bg-[#FFF0D2] py-16 sm:py-20 lg:py-24"
     >
       {/* Full-bleed story image with a warm light wash behind the copy */}
       <div
-        className="absolute inset-0 z-0 bg-cover bg-[78%_center] bg-no-repeat"
+        className="scroll-scene-image absolute inset-0 z-0 bg-cover bg-[78%_center] bg-no-repeat"
         style={{ backgroundImage: "url('/our-story-card.jpg')" }}
         role="img"
         aria-label="SAANJH PARFUMS cotton card on sunlit sandstone with red blossoms"

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight, LockKeyhole, Menu } from 'lucide-react';
+import { ChevronLeft, ChevronRight, LockKeyhole, Menu, X, ZoomIn } from 'lucide-react';
 import { AFTER_RAIN, AFTER_RAIN_BOTTLE_IMAGE, formatPrice } from '../data/product.js';
 import RazorpayPaymentButton from './RazorpayPaymentButton.jsx';
 
@@ -33,9 +33,9 @@ export default function ProductPage({ onOpenMenu, onStory, onBack }) {
         </div>
       </header>
 
-      <div className="mx-auto grid max-w-7xl gap-12 px-5 pb-24 pt-8 sm:px-8 md:px-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20 lg:pt-14">
-        <section aria-label="AFTER RAIN product gallery" className="editorial-reveal">
-          <div className="relative aspect-[4/5] overflow-hidden bg-[#E4D5C3]/35" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+      <div className="mx-auto grid max-w-7xl gap-9 px-5 pb-20 pt-7 sm:gap-12 sm:px-8 sm:pb-24 sm:pt-8 md:px-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20 lg:pt-14">
+        <section aria-label="AFTER RAIN product gallery" className="editorial-reveal lg:sticky lg:top-24 lg:self-start">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-[#E4D5C3]/35 shadow-[0_20px_60px_rgba(74,58,52,0.12)]" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
             {gallery.map((image, index) => <button key={image.src} onClick={() => index === activeImage && setIsZoomed(true)} aria-label={`Zoom ${image.alt}`} className={`absolute inset-0 h-full w-full cursor-zoom-in transition-opacity duration-500 ${index === activeImage ? 'opacity-100' : 'pointer-events-none opacity-0'}`}><img src={image.src} alt={image.alt} className={`h-full w-full ${index === 0 ? 'object-contain' : 'object-cover'} image-lift`} /></button>)}
             {activeImage === 0 && <div className="absolute inset-0 bg-[#FFF0D2]/8" />}
             <button onClick={() => moveGallery(-1)} aria-label="Previous product image" className="absolute left-3 top-1/2 -translate-y-1/2 border border-[#FFF0D2]/60 bg-[#220404]/30 p-2 text-[#FFF0D2] backdrop-blur-sm"><ChevronLeft size={18} /></button>
@@ -45,18 +45,36 @@ export default function ProductPage({ onOpenMenu, onStory, onBack }) {
           <p className="mt-3 text-center text-[9px] uppercase tracking-[0.18em] text-[#7A685D] sm:hidden">Swipe to explore</p>
         </section>
 
-        <section className="editorial-reveal self-center">
+        <section className="editorial-reveal self-center rounded-sm border border-[#6E1414]/12 bg-[#FFF7E6]/55 p-5 sm:p-8 lg:p-10">
           <p className="mb-3 text-[10px] uppercase tracking-[0.24em] text-[#6E1414]">THE SIGNATURE FRAGRANCE</p>
-          <h1 className="font-serif text-6xl leading-none text-[#6E1414] sm:text-8xl">AFTER RAIN</h1>
+          <h1 className="font-serif text-[clamp(3.35rem,17vw,6rem)] leading-none text-[#6E1414] sm:text-8xl">AFTER RAIN</h1>
           <p className="mt-5 font-serif text-xl italic text-[#6E1414]">Woody. Aromatic. Unforgettable.</p>
           <p className="mt-5 max-w-lg text-sm leading-[1.8] text-[#4A3A34]">A fragrance shaped by the freshness of bergamot, the depth of oud, and the warmth of leather and musk.</p>
           <div className="my-8 h-px w-10 bg-[#6E1414]/45" />
           <p className="mb-3 text-[10px] uppercase tracking-[0.18em] text-[#7A685D]">CHOOSE YOUR BOTTLE</p>
-          <div className="grid grid-cols-2 gap-3">{AFTER_RAIN.variants.map((variant) => <button key={variant.id} onClick={() => setSelectedVariant(variant)} className={`border p-4 text-left transition-colors ${selectedVariant.id === variant.id ? 'border-[#6E1414] bg-[#6E1414] text-[#FFF0D2]' : 'border-[#6E1414]/25 text-[#6E1414]'}`}><span className="block text-[10px] uppercase tracking-[0.18em]">{variant.size}</span><span className="mt-1 block font-serif text-2xl">{formatPrice(variant.price)}</span></button>)}</div>
+          <div className="grid grid-cols-2 gap-2.5 sm:gap-3">{AFTER_RAIN.variants.map((variant) => <button key={variant.id} onClick={() => setSelectedVariant(variant)} className={`border p-3 sm:p-4 text-left transition-colors ${selectedVariant.id === variant.id ? 'border-[#6E1414] bg-[#6E1414] text-[#FFF0D2]' : 'border-[#6E1414]/25 text-[#6E1414]'}`}><span className="block text-[10px] uppercase tracking-[0.18em]">{variant.size}</span><span className="mt-1 flex items-baseline gap-2 font-sans text-xl font-medium tracking-tight sm:text-2xl"><span>{formatPrice(variant.price)}</span><span className="text-sm font-normal text-current/55 line-through">{formatPrice(variant.compareAtPrice)}</span></span></button>)}</div>
+          <p className="mt-4 inline-flex border border-[#6E1414]/20 bg-[#6E1414]/5 px-3 py-2 text-[10px] uppercase tracking-[0.16em] text-[#6E1414]">Launch offer · ₹999</p>
           <div className="mt-4"><RazorpayPaymentButton /></div>
           <div className="mt-5 flex items-center gap-2 text-[11px] text-[#7A685D]"><LockKeyhole size={13} /> Secure checkout · Delivery across India</div>
-          <div className="mt-12 border-t border-[#6E1414]/20 pt-7"><p className="mb-5 text-[10px] uppercase tracking-[0.2em] text-[#6E1414]">THE STORY</p><p className="font-serif text-xl italic text-[#6E1414]">For the moments that stay with you.</p><p className="mt-4 text-sm leading-[1.8] text-[#5A3E36]">There is a certain stillness after the rain. The air changes, the world grows quieter, and some feelings stay long after the moment has passed.</p><p className="mt-4 text-sm leading-[1.8] text-[#5A3E36]">AFTER RAIN is our interpretation of that feeling.</p></div>
-          <div className="mt-10 border-t border-[#6E1414]/20 pt-7"><p className="mb-5 text-[10px] uppercase tracking-[0.2em] text-[#6E1414]">THE SCENT</p><div className="grid gap-4 text-xs leading-relaxed text-[#5A3A34] sm:grid-cols-3">{Object.entries(AFTER_RAIN.notes).map(([layer, notes]) => <div key={layer}><p className="mb-2 text-[10px] uppercase tracking-[0.16em] text-[#6E1414]">{layer === 'top' ? 'Top notes' : layer === 'heart' ? 'Heart notes' : 'Base notes'}</p><p>{notes.join(' · ')}</p></div>)}</div></div>
+        </section>
+      </div>
+      <div className="mx-auto max-w-5xl px-5 pb-20 text-center sm:px-8 md:px-12 sm:pb-24">
+        <section className="border-t border-[#6E1414]/20 pt-8 sm:pt-10">
+          <p className="mb-5 text-[10px] uppercase tracking-[0.2em] text-[#6E1414]">THE STORY</p>
+          <p className="font-serif text-xl italic text-[#6E1414] sm:text-2xl">For the moments that stay with you.</p>
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-[1.8] text-[#5A3E36]">There is a certain stillness after the rain. The air changes, the world grows quieter, and some feelings stay long after the moment has passed.</p>
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-[1.8] text-[#5A3E36]">AFTER RAIN is our interpretation of that feeling.</p>
+        </section>
+        <section className="mt-12 border-t border-[#6E1414]/20 pt-8 sm:mt-16 sm:pt-10">
+          <p className="mb-6 text-[10px] uppercase tracking-[0.2em] text-[#6E1414]">THE SCENT</p>
+          <div className="grid gap-7 text-xs leading-relaxed text-[#5A3A34] sm:grid-cols-3 sm:gap-10">
+            {Object.entries(AFTER_RAIN.notes).map(([layer, notes]) => (
+              <div key={layer}>
+                <p className="mb-2 text-[10px] uppercase tracking-[0.16em] text-[#6E1414]">{layer === 'top' ? 'Top notes' : layer === 'heart' ? 'Heart notes' : 'Base notes'}</p>
+                <p>{notes.join(' · ')}</p>
+              </div>
+            ))}
+          </div>
         </section>
       </div>
       {isZoomed && <div className="fixed inset-0 z-[80] flex items-center justify-center bg-[#220404]/90 p-5" role="dialog" aria-modal="true" aria-label="Expanded product image" onClick={() => setIsZoomed(false)}><img src={gallery[activeImage].src} alt={gallery[activeImage].alt} className="max-h-[90vh] max-w-[92vw] object-contain" /><button onClick={() => setIsZoomed(false)} aria-label="Close image" className="absolute right-5 top-5 p-2 text-[#FFF0D2]"><X size={22} /></button><span className="absolute bottom-5 flex items-center gap-2 text-[10px] uppercase tracking-[0.18em] text-[#FFF0D2]/70"><ZoomIn size={13} /> Click to close</span></div>}

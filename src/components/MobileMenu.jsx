@@ -51,7 +51,7 @@ export default function MobileMenu({ isOpen, onClose, onOpenProduct, onHome, onN
       />
 
       {/* Slide-over Content Drawer in #FFF0D2 */}
-      <div className="relative w-full max-w-[85vw] sm:max-w-md bg-[#FFF0D2] h-full shadow-2xl z-10 flex flex-col justify-between p-6 sm:p-10 md:p-12 overflow-y-auto border-l border-[#6E1414]/15 transform transition-transform duration-500 ease-out">
+      <div className="relative w-full max-w-[92vw] sm:max-w-md bg-[#FFF0D2] h-full shadow-2xl z-10 flex flex-col justify-between p-5 sm:p-10 md:p-12 overflow-y-auto border-l border-[#6E1414]/15 transform transition-transform duration-500 ease-out">
         {/* Header: Brand Woodmark + Close button */}
         <div className="flex items-center justify-between pb-6 sm:pb-8 border-b border-[#6E1414]/15">
           <img
@@ -103,7 +103,7 @@ export default function MobileMenu({ isOpen, onClose, onOpenProduct, onHome, onN
             Some things are better felt than revealed.
           </p>
           <div className="flex items-center justify-between text-xs text-[#7A685D]">
-            <span>hello@saanjhparfums.in</span>
+            <span className="truncate pr-3">hello@saanjhparfums.in</span>
             <span className="tracking-widest uppercase text-[9px] sm:text-[10px]">Debut 2024</span>
           </div>
         </div>

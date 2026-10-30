@@ -12,6 +12,11 @@ Editorial ecommerce storefront for SAANJH PARFUMS' signature fragrance, AFTER RA
 
 ## Razorpay checkout
 
+The current storefront launch price is ₹999 (reduced from ₹1,399). Because
+checkout uses a hosted Razorpay Payment Page, configure that page separately
+with the ₹999 amount;
+the static site cannot enforce or auto-apply a Razorpay dashboard coupon.
+
 The site uses Razorpay's hosted Payment Button, which collects customer information and payment
 details directly in Razorpay. No customer form, order database, or custom payment backend is
 used by the site.

@@ -28,7 +28,7 @@ export default function Hero({ activeStep = '01', onShop }) {
     <section
       id="hero"
       ref={heroRef}
-      className="relative min-h-[90vh] md:min-h-screen w-full flex items-center overflow-hidden bg-[#FFF0D2] pt-20 pb-12 sm:pt-0 sm:pb-0"
+      className="relative min-h-[820px] sm:min-h-[90vh] md:min-h-screen w-full flex items-center overflow-hidden bg-[#FFF0D2] pt-20 pb-5 sm:pt-0 sm:pb-0"
     >
       {/* Sunlit Sandstone & Droplets Background */}
       <div className="absolute inset-0 z-0">
@@ -36,18 +36,18 @@ export default function Hero({ activeStep = '01', onShop }) {
           src="/background.jpg"
           alt="Sunlit sandstone with rainfall droplets and crimson petals"
           fetchPriority="high"
-          className="w-full h-full object-cover object-[62%_center] scale-105 transition-transform duration-1000 ease-out"
+          className="w-full h-full object-cover object-[64%_center] scale-105 transition-transform duration-1000 ease-out sm:object-[62%_center]"
           style={{
             transform: `translate(${mousePos.x * 0.1}px, ${mousePos.y * 0.1}px) scale(1.02)`,
           }}
         />
         {/* Soft warm cream gradient for text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#FFF0D2]/80 via-[#FFF0D2]/35 to-transparent pointer-events-none max-w-xl md:max-w-2xl" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#FFF0D2]/80 via-[#FFF0D2]/30 to-[#FFF0D2]/10 pointer-events-none sm:max-w-xl sm:bg-gradient-to-r sm:from-[#FFF0D2]/80 sm:via-[#FFF0D2]/35 sm:to-transparent md:max-w-2xl" />
       </div>
 
       {/* Giant Background Watermark "AFTER RAIN" behind the bottle */}
       <div
-        className="flex absolute right-[2%] sm:right-[6%] lg:right-[12%] top-[14%] sm:top-[16%] z-[1] select-none pointer-events-none flex-col items-start leading-[0.84] opacity-25 md:opacity-35 mix-blend-multiply"
+        className="flex absolute right-[-8%] top-[13%] sm:right-[6%] sm:top-[16%] lg:right-[12%] z-[1] select-none pointer-events-none flex-col items-start leading-[0.84] opacity-15 sm:opacity-25 md:opacity-35 mix-blend-multiply"
         style={{
           transform: `translate(${mousePos.x * -0.15}px, ${mousePos.y * -0.15}px)`,
         }}
@@ -62,15 +62,15 @@ export default function Hero({ activeStep = '01', onShop }) {
       </div>
 
       {/* Main Grid: Left Column Text & Right Column Tilted Bottle (Side-by-Side on all screen sizes) */}
-      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 md:px-12 w-full grid grid-cols-12 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 md:px-12 w-full grid grid-cols-1 sm:grid-cols-12 items-center gap-2 sm:gap-0">
         {/* Left Column Content */}
-        <div className="editorial-reveal col-span-7 sm:col-span-6 lg:col-span-6 text-left py-6 sm:py-0">
+        <div className="editorial-reveal col-span-1 sm:col-span-6 lg:col-span-6 text-center sm:text-left py-6 sm:py-0">
           <span className="mb-4 block font-sans text-[10px] tracking-[0.24em] uppercase text-[#6E1414] sm:mb-5 sm:text-[11px]">
             SAANJH PARFUMS
           </span>
 
           {/* Main H1 Editorial Heading */}
-          <h1 className="font-serif text-[#6E1414] text-[32px] sm:text-5xl md:text-6xl lg:text-[68px] leading-[1.06] font-normal tracking-[-0.01em]">
+          <h1 className="font-serif text-[#6E1414] text-[35px] sm:text-5xl md:text-6xl lg:text-[68px] leading-[1.06] font-normal tracking-[-0.01em]">
             Some moments never
             <br />
             really leave us.
@@ -82,7 +82,7 @@ export default function Hero({ activeStep = '01', onShop }) {
           </p>
 
           {/* CTA Row */}
-          <div className="flex flex-wrap items-center gap-4 sm:gap-7 pt-1">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:justify-start sm:gap-7 pt-1">
             {/* Primary Button */}
             <button
               onClick={onShop}
@@ -108,15 +108,15 @@ export default function Hero({ activeStep = '01', onShop }) {
 
         {/* Right Column / Tilted Perfume Bottle Visual */}
         <div
-          className="col-span-5 sm:col-span-6 lg:col-span-6 flex items-center justify-center pointer-events-none"
+          className="col-span-1 sm:col-span-6 lg:col-span-6 flex h-[300px] sm:h-auto items-center justify-center pointer-events-none"
           style={{
             transform: `translate(${mousePos.x * 0.3}px, ${mousePos.y * 0.3}px)`,
           }}
         >
-          <div className="relative w-full max-w-[260px] sm:max-w-[380px] md:max-w-[450px] lg:max-w-[520px] max-h-[78vh]">
+          <div className="relative w-full max-w-[210px] sm:max-w-[380px] md:max-w-[450px] lg:max-w-[520px] max-h-[78vh]">
             {/* Multi-layered soft drop shadow on sandstone */}
             <div
-              className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-[85%] h-14 bg-[#2A0505]/45 rounded-full blur-xl pointer-events-none"
+              className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-[85%] h-10 sm:-bottom-6 sm:h-14 bg-[#2A0505]/45 rounded-full blur-xl pointer-events-none"
               style={{ transform: 'rotate(19deg) scale(0.95)' }}
             />
             <img
